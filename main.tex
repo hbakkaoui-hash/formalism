@@ -1,9 +1,9 @@
 \documentclass[11pt,a4paper]{article}
 
-% Packages essentiels
+% Essential Packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{geometry}
 \usepackage{hyperref}
@@ -19,22 +19,22 @@
 \usepackage{bm}
 \usepackage{sectsty}
 
-% Configuration de la page
+% Page Configuration
 \geometry{margin=2.5cm}
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\part}{\centering\Large\bfseries\scshape}{\thepart}{1em}{}
 
-% Définitions des théorèmes et propositions
+% Theorem Definitions
 \newtheorem{proposition}{Proposition}
 \newtheorem{conjecture}{Conjecture}
-\newtheorem{remark}{Remarque}
-\newtheorem{definition}{Définition}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
 
-% Titre bilingue
-\title{\textbf{De l'Intuition à la Rigole :\\Une Proposition de Discontinuité Temporelle Quantique sous Examen Critique}\\[0.5em]
-\large\textit{From Intuition to Rigour: A Proposition of Quantum Temporal Discontinuity under Critical Examination}}
-\author{Hassane Bakkaoui\thanks{Chercheur indépendant. Intuition originale conçue vers 1990 ; formalisation et analyse critique 2024 avec assistance IA.} \\ \textit{Avec contribution analytique de Claude (Anthropic)}}
+% Bilingual Title
+\title{\textbf{From Intuition to Rigour: \\ A Proposition of Quantum Temporal Discontinuity under Critical Examination}\\[0.5em]
+\large\textit{De l'Intuition à la Rigueur : Une Proposition de Discontinuité Temporelle Quantique sous Examen Critique}}
+\author{Hassane Bakkaoui\thanks{Independent researcher. Original intuition conceived circa 1990; formalization and critical analysis 2024 with AI assistance.} \\ \textit{With analytical contribution from Claude (Anthropic)}}
 \date{\today}
 
 \begin{document}
@@ -42,436 +42,436 @@
 \maketitle
 
 % ============================================================
-% RÉSUMÉ / ABSTRACT
+% ABSTRACT / RÉSUMÉ
 % ============================================================
 \begin{abstract}
-Nous présentons une étude en trois temps d'une hypothèse spéculative concernant la structure temporelle de la matière quantique. \textbf{Premièrement}, nous énonçons la proposition originelle : une analogie formelle entre la localisation spatiale discontinue de l'atome (noyau concentré dans un vide) et une possible discontinuité temporelle de l'existence des particules. Cette intuition, conçue dans les années 1990 et formalisée via assistance IA, postule que les particules ``clignoteraient'' dans le temps avec une échelle caractéristique $\tau_0 \sim 10^{-24}$ s. \textbf{Deuxièmement}, nous soumettons cette proposition à une analyse critique systématique, identifiant quatre failles conceptuelles majeures : l'incohérence ontologique de la ``non-existence temporelle'', le choix arbitraire de l'échelle temporelle, la violation apparente de l'unitarité quantique, et la confusion entre discrétisation mathématique et discontinuité physique. \textbf{Troisièmement}, adoptant une démarche de \textit{contrafactuel scientifique}, nous dérivons les conséquences théoriques et expérimentales que cette hypothèse engendrerait si elle était valide malgré ses failles : violation effective de la symétrie de Lorentz, résonances stroboscopiques en théorie des champs, mécanismes de décohérence intrinsèque, et cinq protocoles expérimentaux alternatifs (spectroscopie de transitions interdites, désynchronisation relativiste d'états intriqués, archéologie de résonances en collisionneur, limites aux superpositions macroscopiques, et anomalies du rayonnement de Hawking). Notre travail illustre comment une intuition brute, même partiellement défaillante, peut générer un programme de recherche scientifiquement productif lorsqu'elle est soumise à une rigueur formelle assistée par intelligence artificielle.
+We present a three-part study of a speculative hypothesis concerning the temporal structure of quantum matter. \textbf{First}, we state the original proposition: a formal analogy between the spatially discontinuous localization of the atom (nucleus concentrated within a void) and a possible temporal discontinuity of particle existence. This intuition, conceived in the 1990s and formalized via AI assistance, postulates that particles would ``flicker'' in time with a characteristic scale $\tau_0 \sim 10^{-24}$ s. \textbf{Second}, we subject this proposition to systematic critical analysis, identifying four major conceptual flaws: the ontological incoherence of ``temporal non-existence,'' the arbitrary choice of temporal scale, the apparent violation of quantum unitarity, and the confusion between mathematical discretization and physical discontinuity. \textbf{Third}, adopting a \textit{scientific counterfactual} approach, we derive the theoretical and experimental consequences this hypothesis would generate if it were valid despite its flaws: effective violation of Lorentz symmetry, stroboscopic resonances in field theory, intrinsic decoherence mechanisms, and five alternative experimental protocols (precision spectroscopy of forbidden transitions, relativistic desynchronization of entangled states, collider resonance archaeology, limits on macroscopic superpositions, and Hawking radiation anomalies). Our work illustrates how a raw intuition, even partially defective, can generate a scientifically productive research program when subjected to AI-assisted formal rigour.
 
 \vspace{0.5em}
-\noindent\textbf{Mots-clés :} temps discret, fondements de la mécanique quantique, granularité temporelle, décohérence, métaphysique expérimentale, formalisation assistée par IA, critique conceptuelle
+\noindent\textbf{Keywords:} discrete time, quantum foundations, temporal granularity, decoherence, experimental metaphysics, AI-assisted formalization, conceptual critique
 
 \vspace{0.3em}
-\noindent\textbf{Keywords:} discrete time, quantum foundations, temporal granularity, decoherence, experimental metaphysics, AI-assisted formalization, conceptual critique
+\noindent\textbf{Mots-clés :} temps discret, fondements de la mécanique quantique, granularité temporelle, décohérence, métaphysique expérimentale, formalisation assistée par IA, critique conceptuelle
 \end{abstract}
 
 % ============================================================
-% INTRODUCTION GÉNÉRALE
+% GENERAL INTRODUCTION
 % ============================================================
-\section*{Introduction : La Démarche en Trois Mouvements}
+\section*{Introduction: A Three-Movement Approach}
 
-Cet article adopte une structure tripartite inhabituelle mais méthodologiquement transparente. Nous partons d'une constatation simple : la physique théorique contemporaine produit des hypothèses fondamentales soit par déduction rigoureuse à partir de principes établis, soit par induction empirique à partir de données expérimentales. Une voie troisième, trop souvent occultée, est celle de l'\textbf{intuition analogique} --- la reconnaissance de patterns structurels entre domaines distincts --- suivie d'une \textbf{soumission critique} et d'une \textbf{exploration contrafactuelle} de ses implications.
+This article adopts an unusual but methodologically transparent tripartite structure. We start from a simple observation: contemporary theoretical physics produces fundamental hypotheses either by rigorous deduction from established principles or by empirical induction from experimental data. A third path, too often obscured, is that of \textbf{analogical intuition}---the recognition of structural patterns between distinct domains---followed by \textbf{critical examination} and \textbf{counterfactual exploration} of its implications.
 
-La proposition examinée ici illustre cette trajectoire. Conçue originellement dans les années 1990 sous forme d'intuition brute (qualifiée par son auteur de ``quantiquo-épilepsie''), elle a été préservée dans l'informel pendant trois décennies faute d'appareillage technique pour son articulation scientifique. Sa transformation en objet de recherche formalisé a été effectuée en 2024 via un dialogue itératif avec des systèmes de modèles de langage de grande taille, où l'intelligence artificielle a fonctionné comme \textit{traducteur formel} --- convertissant des associations métaphoriques en structures mathématiques, identifiant les présupposés implicites, et imposant des contraintes disciplinaires (causalité, unitarité, falsifiabilité) que l'intuition brute ignore typiquement.
+The proposition examined here illustrates this trajectory. Originally conceived in the 1990s as a raw intuition (termed by its author ``quantiquo-épilepsie'' or ``quantum epilepsy''), it was preserved in informal notes for three decades for lack of technical apparatus for its scientific articulation. Its transformation into a formal research object was carried out in 2024 through an iterative dialogue with large language model systems, where artificial intelligence functioned as \textit{formal translator}---converting metaphorical associations into mathematical structures, identifying implicit presuppositions, and imposing disciplinary constraints (causality, unitarity, falsifiability) that raw intuition typically ignores.
 
-Notre démarche en trois parties reflète cette progression épistémique :
+Our three-part approach reflects this epistemic progression:
 
 \begin{enumerate}[label=\textbf{\Roman*.}]
-    \item \textbf{L'énoncé} : Présentation fidèle de la proposition originelle, dans sa forme formalisée mais avant toute critique.
-    \item \textbf{L'examen} : Analyse systématique des failles conceptuelles, méthodologiques et formelles.
-    \item \textbf{L'exploration} : Dérivation rigoureuse des conséquences, adoptant l'hypothèse comme \textit{contrafactuel scientifique} --- une méthode classique consistant à explorer ``que se passerait-il si'' une proposition défaillante était néanmoins valide.
+    \item \textbf{The Statement}: Faithful presentation of the original proposition, in its formalized form but prior to any critique.
+    \item \textbf{The Examination}: Systematic analysis of conceptual, methodological, and formal flaws.
+    \item \textbf{The Exploration}: Rigorous derivation of consequences, adopting the hypothesis as a \textit{scientific counterfactual}---a classical method consisting in exploring ``what would happen if'' a defective proposition were nonetheless valid.
 \end{enumerate}
 
-Cette structure vise à répondre à une exigence de transparence : le lecteur doit pouvoir évaluer la proposition originelle sur ses propres termes avant d'en connaître les failles, puis comprendre comment ces failles n'épuisent pas la productivité scientifique de l'intuition sous-jacente.
+This structure aims to answer a transparency requirement: the reader must be able to evaluate the original proposition on its own terms before learning of its flaws, then understand how these flaws do not exhaust the scientific productivity of the underlying intuition.
 
 % ============================================================
-% PARTIE I : ÉNONCÉ DE LA PROPOSITION
+% PART I: STATEMENT OF THE PROPOSITION
 % ============================================================
-\part{Énoncé de la Proposition Originale}
+\part{Statement of the Original Proposition}
 
-\section{Le Contexte et l'Intuition Fondamentale}
+\section{Context and Fundamental Intuition}
 
-\subsection{L'asymétrie espace-temps dans la physique atomique}
+\subsection{The space-time asymmetry in atomic physics}
 
-La physique atomique établit que la matière baryonique présente une structure spatiale fondamentalement discontinue. Le modèle atomique standard décrit un noyau de dimensions caractéristiques $R_{\text{noyau}} \sim 10^{-15}$ m, concentrant plus de 99,9\% de la masse, entouré d'un nuage électronique s'étendant jusqu'à $R_{\text{atome}} \sim 10^{-10}$ m. Cela définit une densité de présence spatiale :
+Atomic physics establishes that baryonic matter exhibits a fundamentally discontinuous spatial structure. The standard atomic model describes a nucleus of characteristic dimensions $R_{\text{nucleus}} \sim 10^{-15}$ m, concentrating more than 99.9\% of mass, surrounded by an electronic cloud extending to $R_{\text{atom}} \sim 10^{-10}$ m. This defines a spatial presence density:
 
 \begin{equation}\label{eq:eta_space}
-\eta_{\text{espace}} = \frac{V_{\text{noyau}}}{V_{\text{atome}}} \sim 10^{-15}
+\eta_{\text{space}} = \frac{V_{\text{nucleus}}}{V_{\text{atom}}} \sim 10^{-15}
 \end{equation}
 
-établie expérimentalement par la diffusion de Rutherford (1911) et confirmée par la spectroscopie moderne.
+established experimentally by Rutherford scattering (1911) and confirmed by modern spectroscopy.
 
-À l'inverse, la mécanique quantique postule une existence temporelle continue des états quantiques. L'équation de Schrödinger dépendante du temps :
+Conversely, quantum mechanics postulates continuous temporal existence of quantum states. The time-dependent Schrödinger equation:
 
 \begin{equation}\label{eq:schrodinger}
 i\hbar \frac{\partial}{\partial t}\ket{\psi(t)} = \hat{H}\ket{\psi(t)}
 \end{equation}
 
-présuppose une évolution différentiable avec action uniforme de l'opérateur d'évolution $\hat{U}(t,t_0) = \exp[-i\hat{H}(t-t_0)/\hbar]$ sur tout intervalle temporel. Aucune granularité temporelle fondamentale n'est introduite dans le formalisme standard.
+presupposes differentiable evolution with uniform action of the evolution operator $\hat{U}(t,t_0) = \exp[-i\hat{H}(t-t_0)/\hbar]$ over all temporal intervals. No fundamental temporal granularity is introduced in standard formalism.
 
-\subsection{L'intuition analogique centrale}
+\subsection{The central analogical intuition}
 
-La proposition originale repose sur une question simple, presque naïve : \textit{si la matière est discontinue dans l'espace --- concentrée dans un minuscule noyau au sein d'un atome vide --- pourquoi serait-elle continue dans le temps ?}
+The original proposition rests on a simple, almost naive question: \textit{if matter is discontinuous in space---concentrated in a tiny nucleus within an atomic void---why would it be continuous in time?}
 
-Cette intuition postule une \textbf{symétrie formelle} entre les dimensions spatiales et la dimension temporelle dans la localisation de la matière. Si l'espace atomique est ``granulaire'' (présence concentrée/absence diffuse), le temps pourrait l'être également (existence intermittente/non-existence).
+This intuition postulates a \textbf{formal symmetry} between spatial dimensions and the temporal dimension in the localization of matter. If atomic space is ``granular'' (concentrated presence/diffuse absence), time could be so as well (intermittent existence/non-existence).
 
-\subsection{Le facteur d'existence temporelle}
+\subsection{The temporal existence factor}
 
-Pour quantifier cette intuition, la proposition introduit un \textbf{facteur d'existence temporelle} $\mathcal{E}$, par analogie directe avec la densité spatiale $\eta_{\text{espace}}$ :
+To quantify this intuition, the proposition introduces a \textbf{temporal existence factor} $\mathcal{E}$, by direct analogy with the spatial density $\eta_{\text{space}}$:
 
-\begin{definition}[Facteur d'existence temporelle]
-Soit $\tau_{\text{existence}}$ la durée cumulée d'existence effective d'une particule sur une période de référence $\tau_{\text{cycle}}$. Le facteur d'existence temporelle est défini par :
-\begin{equation}\label{eq:facteur_existence}
+\begin{definition}[Temporal existence factor]
+Let $\tau_{\text{existence}}$ be the cumulative duration of effective particle existence over a reference period $\tau_{\text{cycle}}$. The temporal existence factor is defined by:
+\begin{equation}\label{eq:existence_factor}
 \mathcal{E} = \frac{\tau_{\text{existence}}}{\tau_{\text{cycle}}}
 \end{equation}
 \end{definition}
 
-Dans cette vision, une particule ``existerait'' pendant des intervalles discrets $\tau_{\text{existence}}$, séparés par des ``gaps'' de non-existence $\tau_{\text{non-existence}} = \tau_{\text{cycle}} - \tau_{\text{existence}}$, de telle sorte que $\mathcal{E} < 1$.
+In this vision, a particle would ``exist'' during discrete intervals $\tau_{\text{existence}}$, separated by ``gaps'' of non-existence $\tau_{\text{non-existence}} = \tau_{\text{cycle}} - \tau_{\text{existence}}$, such that $\mathcal{E} < 1$.
 
-\section{Échelles Caractéristiques et Formalisation}
+\section{Characteristic Scales and Formalization}
 
-\subsection{L'échelle de l'atome d'hydrogène}
+\subsection{The hydrogen atom scale}
 
-Pour l'électron atomique, la période orbitale caractéristique dans l'état fondamental de l'hydrogène est :
+For the atomic electron, the characteristic orbital period in the hydrogen ground state is:
 
-\begin{equation}\label{eq:periode_orbitale}
-\tau_{\text{orbite}} = \frac{2\pi a_0}{v_{\text{Bohr}}} = \frac{4\pi \hbar^3}{m_e e^4} \approx 1,52 \times 10^{-16}~\text{s}
+\begin{equation}\label{eq:orbital_period}
+\tau_{\text{orbit}} = \frac{2\pi a_0}{v_{\text{Bohr}}} = \frac{4\pi \hbar^3}{m_e e^4} \approx 1.52 \times 10^{-16}~\text{s}
 \end{equation}
 
-où $a_0$ est le rayon de Bohr et $v_{\text{Bohr}} = \alpha c$ la vitesse de l'électron dans le modèle de Bohr ($\alpha \approx 1/137$ la constante de structure fine).
+where $a_0$ is the Bohr radius and $v_{\text{Bohr}} = \alpha c$ the electron velocity in the Bohr model ($\alpha \approx 1/137$ the fine-structure constant).
 
-Si l'on postule une symétrie formelle avec la densité spatiale atomique (Éq. \ref{eq:eta_space}), on obtiendrait une échelle de ``non-existence'' :
+If one postulates a formal symmetry with atomic spatial density (Eq. \ref{eq:eta_space}), one would obtain a scale of ``non-existence'':
 
-\begin{equation}\label{eq:non_existence_naive}
-\tau_{\text{non-existence}} \sim \tau_{\text{orbite}} \cdot (1-\eta_{\text{espace}}) \approx \tau_{\text{orbite}}
+\begin{equation}\label{eq:naive_nonexistence}
+\tau_{\text{non-existence}} \sim \tau_{\text{orbit}} \cdot (1-\eta_{\text{space}}) \approx \tau_{\text{orbit}}
 \end{equation}
 
-Cependant, cette analogie directe est physiquement problématique (comme nous le verrons en Partie II) car elle ne respecte pas les contraintes de causalité.
+However, this direct analogy is physically problematic (as we shall see in Part II) because it violates causality constraints.
 
-\subsection{Échelle proposée : le domaine électrofaible}
+\subsection{Proposed scale: the electroweak domain}
 
-La proposition alternative suggère une échelle intermédiaire associée aux interactions électrofaibles :
+The alternative proposition suggests an intermediate scale associated with electroweak interactions:
 
-\begin{equation}\label{eq:echelle_proposee}
-\tau_{\text{proposé}} \sim 10^{-24}~\text{s}
+\begin{equation}\label{eq:proposed_scale}
+\tau_{\text{proposed}} \sim 10^{-24}~\text{s}
 \end{equation}
 
-correspondant à l'échelle de temps caractéristique des interactions faibles ($\tau_W \sim \hbar/(m_W c^2) \approx 4 \times 10^{-27}$~s) ou des résonances hadroniques.
+corresponding to the characteristic timescale of weak interactions ($\tau_W \sim \hbar/(m_W c^2) \approx 4 \times 10^{-27}$~s) or hadronic resonances.
 
-\subsection{Hamiltonien à temps discret}
+\subsection{Discrete-time Hamiltonian}
 
-La formalisation mathématique propose de modifier l'équation de Schrödinger en traitant le temps comme une variable discrète $t_n = n \cdot \tau_0$, avec $\tau_0$ l'échelle de granularité temporelle. L'évolution devient :
+The mathematical formalization proposes to modify the Schrödinger equation by treating time as a discrete variable $t_n = n \cdot \tau_0$, with $\tau_0$ the temporal granularity scale. Evolution becomes:
 
-\begin{equation}\label{eq:evolution_discrete}
+\begin{equation}\label{eq:discrete_evolution}
 \ket{\psi(t_{n+1})} = \hat{U}(\tau_0)\ket{\psi(t_n)}
 \end{equation}
 
-avec $\hat{U}(\tau_0) = e^{-i\hat{H}\tau_0/\hbar}$. Dans la limite $\tau_0 \to 0$, on retrouve l'équation de Schrödinger continue.
+with $\hat{U}(\tau_0) = e^{-i\hat{H}\tau_0/\hbar}$. In the limit $\tau_0 \to 0$, one recovers continuous Schrödinger evolution.
 
-Un développement à l'ordre dominant donne :
+A leading-order expansion gives:
 
-\begin{equation}\label{eq:developpement_discret}
+\begin{equation}\label{eq:discrete_expansion}
 \frac{\ket{\psi(t_{n+1})} - \ket{\psi(t_n)}}{\tau_0} = -\frac{i}{\hbar}\hat{H}\ket{\psi(t_n)} - \frac{\tau_0}{2\hbar^2}\hat{H}^2\ket{\psi(t_n)} + \mathcal{O}(\tau_0^2)
 \end{equation}
 
-Le terme correctif $\propto \tau_0$ représenterait une déviation par rapport à l'évolution continue standard, détectable si $\tau_0$ est fini.
+The corrective term $\propto \tau_0$ would represent a deviation from standard continuous evolution, detectable if $\tau_0$ is finite.
 
-\subsection{Modification de la relation d'incertitude temps-énergie}
+\subsection{Modification of the time-energy uncertainty relation}
 
-La proposition suggère que la relation d'incertitude de Mandelstam-Tamm :
+The proposition suggests that the Mandelstam-Tamm uncertainty relation:
 
 \begin{equation}\label{eq:mandelstam_tamm}
 \Delta E \cdot \Delta t \geq \frac{\hbar}{2}
 \end{equation}
 
-pourrait être modifiée par une granularité temporelle fondamentale. Si $\Delta t$ est quantifié par multiples de $\tau_0$, la limite inférieure de l'incertitude en énergie deviendrait :
+could be modified by fundamental temporal granularity. If $\Delta t$ is quantized in units of $\tau_0$, the lower bound on energy uncertainty would become:
 
-\begin{equation}\label{eq:incertitude_modifiee}
+\begin{equation}\label{eq:modified_uncertainty}
 \Delta E \geq \frac{\hbar}{2\tau_0} \cdot \frac{1}{n} \quad (n \in \mathbb{N}^*)
 \end{equation}
 
-impliquant une ``quantification'' de l'incertitude énergétique minimale.
+implying a ``quantization'' of minimal energy uncertainty.
 
 % ============================================================
-% PARTIE II : ANALYSE CRITIQUE
+% PART II: CRITICAL ANALYSIS
 % ============================================================
-\part{Analyse Critique : Failles Conceptuelles et Méthodologiques}
+\part{Critical Analysis: Conceptual and Methodological Flaws}
 
-\section{Faille I : L'Erreur de Catégorie Ontologique}
+\section{Flaw I: The Ontological Category Error}
 
-\subsection{Deux types de discontinuité incommensurables}
+\subsection{Two incommensurable types of discontinuity}
 
-L'analogie centrale de la proposition conflit \textbf{deux discontinuités ontologiquement distinctes} :
+The central analogy of the proposition conflates \textbf{two ontologically distinct discontinuities}:
 
 \begin{table}[h]
 \centering
 \begin{tabular}{@{}p{0.45\textwidth}p{0.45\textwidth}@{}}
 \toprule
-\textbf{Discontinuité spatiale (établie)} & \textbf{Discontinuité temporelle (proposée)} \\
+\textbf{Spatial discontinuity (established)} & \textbf{Temporal discontinuity (proposed)} \\
 \midrule
-Matière \textit{localisée} dans un volume réduit & Matière \textit{existant de manière intermittente} \\
-Le vide inter-atomique est absence de matière & Le ``vide temporel'' est ontologiquement indéfini \\
-Le nuage électronique occupe l'espace intermédiaire & Aucun ``nuage temporel'' équivalent proposé \\
-La particule existe continûment dans le temps & La particule cesse d'exister pendant les gaps \\
+Matter \textit{localized} in reduced volume & Matter \textit{existing intermittently} \\
+Inter-atomic void is absence of matter & ``Temporal void'' is ontologically undefined \\
+Electronic cloud occupies intermediate space & No equivalent ``temporal cloud'' proposed \\
+Particle exists continuously in time & Particle ceases to exist during gaps \\
 \bottomrule
 \end{tabular}
-\caption{Asymétrie ontologique dans l'analogie espace-temps}
+\caption{Ontological asymmetry in the space-time analogy}
 \end{table}
 
-\subsection{L'aporie de la non-existence temporelle}
+\subsection{The aporia of temporal non-existence}
 
-La lacune critique : la proposition omet de définir \textbf{ce que constitue la ``non-existence temporelle'' d'une particule qui existe spatialement}. Les questions suivantes demeurent sans réponse :
+The critical lacuna: the proposition omits to define \textbf{what constitutes the ``temporal non-existence'' of a spatially existing particle}. The following questions remain unanswered:
 
 \begin{itemize}[leftmargin=*]
-    \item La particule cesse-t-elle d'interagir avec les champs pendant $\tau_{\text{non-existence}}$ ?
-    \item Les nombres quantiques (charge, spin, masse) sont-ils conservés ou suspendus ?
-    \item Les corrélations d'intrication persistent-elles à travers les ``trous temporels'' ?
-    \item La fonction d'onde est-elle définie pendant la non-existence ?
+    \item Does the particle cease interacting with fields during $\tau_{\text{non-existence}}$?
+    \item Are quantum numbers (charge, spin, mass) conserved or suspended?
+    \item Do entanglement correlations persist across ``temporal holes''?
+    \item Is the wave function defined during non-existence?
 \end{itemize}
 
-Sans réponse à ces questions, la proposition relève davantage de la métaphore que de la physique opérationnelle. La non-existence spatiale est triviale (absence de détection) ; la non-existence temporelle d'un objet existant est conceptuellement incohérente sans machinerie métaphysique additionnelle.
+Without answers to these questions, the proposition remains more metaphor than operational physics. Spatial non-existence is trivial (absence of detection); temporal non-existence of an existing object is conceptually incoherent without additional metaphysical machinery.
 
-\section{Faille II : Le Choix Arbitraire de l'Échelle}
+\section{Flaw II: The Arbitrary Choice of Scale}
 
-\subsection{Absence de mécanisme de dérivation}
+\subsection{Absence of derivation mechanism}
 
-L'échelle proposée $\tau_0 \sim 10^{-24}$ s est justifiée par sa proximité numérique avec les échelles de temps des interactions faibles ($\tau_W \sim 4 \times 10^{-27}$ s). Cependant :
+The proposed scale $\tau_0 \sim 10^{-24}$ s is justified by numerical proximity to weak interaction timescales ($\tau_W \sim 4 \times 10^{-27}$ s). However:
 
-\begin{remark}[Couplage arbitraire d'échelles]
-Aucun mécanisme physique ne relie la dynamique de l'électron atomique aux échelles d'interaction faible. Les électrons sont des leptons de première génération sans couleur ; ils ne participent pas significativement à l'interaction faible (le couplage est supprimé par le rapport $m_e/m_W \sim 10^{-5}$). La sélection de $10^{-24}$ s représente une \textit{coïncidence numérique sans fondement causal}.
+\begin{remark}[Arbitrary scale coupling]
+No physical mechanism links atomic electron dynamics to weak interaction scales. Electrons are first-generation leptons without colour; they do not participate significantly in weak interaction (coupling is suppressed by the ratio $m_e/m_W \sim 10^{-5}$). The selection of $10^{-24}$ s represents a \textit{numerical coincidence without causal foundation}.
 \end{remark}
 
-Un traitement rigoureux requiert soit :
+A rigorous treatment requires either:
 \begin{enumerate}[label=(\alph*)]
-    \item Une dérivation à partir des premiers principes (par exemple, gravité quantique)
-    \item Un couplage phénoménologique à la physique connue (par exemple, effets à l'échelle de Planck $t_P = \sqrt{\hbar G/c^5} \approx 5,39 \times 10^{-44}$ s)
-    \item Une contrainte expérimentale à partir des données existantes
+    \item Derivation from first principles (e.g., quantum gravity)
+    \item Phenomenological coupling to known physics (e.g., Planck scale effects $t_P = \sqrt{\hbar G/c^5} \approx 5.39 \times 10^{-44}$ s)
+    \item Experimental constraint from existing data
 \end{enumerate}
-Aucune de ces options n'est satisfaite dans la proposition originale.
+None of these options is satisfied in the original proposition.
 
-\section{Faille III : La Tension avec l'Unitarité Quantique}
+\section{Flaw III: Tension with Quantum Unitarity}
 
-\subsection{Discrétisation vs. discontinuité}
+\subsection{Discretization vs. discontinuity}
 
-L'équation d'évolution discrète (Éq. \ref{eq:evolution_discrete}) :
+The discrete evolution equation (Eq. \ref{eq:discrete_evolution}):
 
 \begin{equation}
 \ket{\psi(t_{n+1})} = \hat{U}(\tau_0)\ket{\psi(t_n)}
 \end{equation}
 
-décrit une \textbf{évolution continue discrétisée}, non une \textbf{existence interrompue}. Si la particule ``n'existe pas'' entre $t_n$ et $t_{n+1}$, l'opérateur d'évolution devrait être :
+describes \textbf{discretized continuous evolution}, not \textbf{interrupted existence}. If the particle ``does not exist'' between $t_n$ and $t_{n+1}$, the evolution operator should be:
 \begin{itemize}
-    \item Indéfini (pas d'évolution possible pour une entité inexistante)
-    \item Ou projeté sur l'identité (conservation formelle sans dynamique)
+    \item Undefined (no evolution possible for a non-existent entity)
+    \item Or projected onto identity (formal conservation without dynamics)
 \end{itemize}
 
-Or l'opérateur $\hat{U}(\tau_0) = \exp(-i\hat{H}\tau_0/\hbar)$ suppose une \textbf{propagation unitaire continue} sur l'intervalle $\tau_0$. Le formalisme conflit \textit{discrétisation mathématique} avec \textit{discontinuité physique} --- une distinction aux conséquences mesurables distinctes.
+Yet the operator $\hat{U}(\tau_0) = \exp(-i\hat{H}\tau_0/\hbar)$ presupposes \textbf{continuous unitary propagation} over interval $\tau_0$. The formalism conflates \textit{mathematical discretization} with \textit{physical discontinuity}---a distinction with distinct measurable consequences.
 
-\subsection{Le problème de la conservation}
+\subsection{The conservation problem}
 
-Si l'existence est réellement intermittente, qu'advient-il de la conservation de la probabilité ? L'unitarité exige $\braket{\psi(t)}{\psi(t)} = 1$ pour tout $t$. Pendant les périodes de ``non-existence'', la norme devrait-elle chuter à zéro ? Si oui, la réapparition de la particule violerait la conservation de la norme. Si non, la ``non-existence'' n'est qu'une redéfinition sémantique de l'évolution continue.
+If existence is truly intermittent, what becomes of probability conservation? Unitarity requires $\braket{\psi(t)}{\psi(t)} = 1$ for all $t$. During ``non-existence'' periods, should the norm drop to zero? If so, particle reappearance would violate norm conservation. If not, ``non-existence'' is merely a semantic redefinition of continuous evolution.
 
-\section{Faille IV : La Mauvaise Application de l'Incertitude Temps-Énergie}
+\section{Flaw IV: Misapplication of Time-Energy Uncertainty}
 
-\subsection{Confusion entre granularité et durée de vie}
+\subsection{Confusion between granularity and lifetime}
 
-L'argument suggérant que la quantification de $\Delta t$ en unités de $\tau_0$ modifie la relation d'incertitude (Éq. \ref{eq:incertitude_modifiee}) :
+The argument suggesting that quantizing $\Delta t$ in units of $\tau_0$ modifies the uncertainty relation (Eq. \ref{eq:modified_uncertainty}):
 
 \begin{equation}
 \Delta E \geq \frac{\hbar}{2\tau_0} \cdot \frac{1}{n}
 \end{equation}
 
-est formellement incorrect. La relation de Mandelstam-Tamm (Éq. \ref{eq:mandelstam_tamm}) concerne la \textbf{durée de vie} des états quantiques --- le temps caractéristique de changement significatif de l'état --- non une granularité temporelle fondamentale.
+is formally incorrect. The Mandelstam-Tamm relation (Eq. \ref{eq:mandelstam_tamm}) concerns the \textbf{lifetime} of quantum states---the characteristic time of significant state change---not fundamental temporal granularity.
 
-Quantifier $\Delta t$ impliquerait que les durées de vie des états excités soient des multiples entiers stricts de $\tau_0$. C'est une prédiction testable (absente dans les largeurs de raies spectroscopiques observées, qui montrent une distribution continue), distincte de la prétendue ``quantification de l'incertitude énergétique''.
+Quantizing $\Delta t$ would imply that excited state lifetimes are strict integer multiples of $\tau_0$. This is a testable prediction (absent from observed spectroscopic linewidths, which show continuous distribution), distinct from the claimed ``quantization of energy uncertainty.''
 
-\subsection{Incohérence avec la mécanique quantique standard}
+\subsection{Incoherence with standard quantum mechanics}
 
-De plus, la relation $\Delta E \cdot \Delta t \geq \hbar/2$ n'est pas une relation d'incertitude au sens de Robertson (comme $\Delta x \cdot \Delta p \geq \hbar/2$), car le temps n'est pas un opérateur hermitien en mécanique quantique standard. La proposition confond l'incertitude sur le temps de mesure avec une propriété intrinsèque du temps lui-même.
+Moreover, the relation $\Delta E \cdot \Delta t \geq \hbar/2$ is not an uncertainty relation in the Robertson sense (like $\Delta x \cdot \Delta p \geq \hbar/2$), as time is not a Hermitian operator in standard quantum mechanics. The proposition confuses uncertainty in measurement time with an intrinsic property of time itself.
 
-\section{Bilan de l'Analyse Critique}
+\section{Assessment of Critical Analysis}
 
-La proposition originale, bien qu'intuitivement séduisante, souffre de failles conceptuelles graves :
+The original proposition, though intuitively appealing, suffers from grave conceptual flaws:
 
 \begin{enumerate}[label=\arabic*.]
-    \item \textbf{Incohérence ontologique} : La ``non-existence temporelle'' n'est pas définie opérationnellement.
-    \item \textbf{Arbitraire de l'échelle} : Le choix de $\tau_0 \sim 10^{-24}$ s manque de fondement physique.
-    \item \textbf{Violation de l'unitarité} : Le formalisme suppose une évolution continue déguisée en discontinuité.
-    \item \textbf{Erreur formelle} : Mauvaise interprétation de la relation d'incertitude temps-énergie.
+    \item \textbf{Ontological incoherence}: ``Temporal non-existence'' is not operationally defined.
+    \item \textbf{Scale arbitrariness}: The choice of $\tau_0 \sim 10^{-24}$ s lacks physical foundation.
+    \item \textbf{Unitarity violation}: The formalism presupposes disguised continuous evolution.
+    \item \textbf{Formal error}: Misinterpretation of the time-energy uncertainty relation.
 \end{enumerate}
 
-Ces failles ne signifient pas que l'intuition soit dépourvue de valeur. Elles indiquent que la proposition, telle quelle, ne constitue pas une théorie physique cohérente. Cependant, adoptant une démarche de \textit{contrafactuel scientifique}, nous pouvons explorer les conséquences que cette hypothèse engendrerait si elle était valide malgré ses défauts --- c'est l'objet de la Partie III.
+These flaws do not mean the intuition is devoid of value. They indicate that the proposition, as it stands, does not constitute a coherent physical theory. However, adopting a \textit{scientific counterfactual} approach, we can explore the consequences this hypothesis would generate if it were valid despite its defects---this is the object of Part III.
 
 % ============================================================
-% PARTIE III : CONSÉQUENCES ET EXPLORATION
+% PART III: CONSEQUENCES AND EXPLORATION
 % ============================================================
-\part{Conséquences Théoriques et Expérimentales\\(Exploration Contrafactuelle)}
+\part{Theoretical and Experimental Consequences\\(Counterfactual Exploration)}
 
-\section{Postulat de Travail et Méthodologie}
+\section{Working Hypothesis and Methodology}
 
-Admettons, pour les développements qui suivent, que l'hypothèse de discontinuité temporelle soit valide malgré les failles identifiées en Partie II. Nous adoptons les spécifications suivantes :
+Let us admit, for the developments that follow, that the temporal discontinuity hypothesis is valid despite the flaws identified in Part II. We adopt the following specifications:
 
 \begin{itemize}[leftmargin=*]
-    \item Une échelle de granularité $\tau_0 \sim 10^{-24}$ s existe fondamentalement.
-    \item Les particules existent par ``impulsions'' de durée $\tau_{\text{existence}}$, séparées par des gaps $\tau_{\text{non-existence}}$.
-    \item L'évolution entre impulsions est unitaire ; la ``non-existence'' est traitée comme une phase de projection (non-dynamique).
+    \item A granularity scale $\tau_0 \sim 10^{-24}$ s exists fundamentally.
+    \item Particles exist by ``pulses'' of duration $\tau_{\text{existence}}$, separated by $\tau_{\text{non-existence}}$ gaps.
+    \item Evolution between pulses is unitary; ``non-existence'' is treated as a projection phase (non-dynamical).
 \end{itemize}
 
-Cette exploration contrafactuelle vise à dériver des prédictions empiriques qui, si elles étaient observées, pourraient signaler une granularité temporelle réelle, indépendamment de la formulation originale défaillante.
+This counterfactual exploration aims to derive empirical predictions which, if observed, could signal real temporal granularity, independently of the defective original formulation.
 
-\section{Conséquences Théoriques}
+\section{Theoretical Consequences}
 
-\subsection{Modification des propagateurs de champ quantique}
+\subsection{Modification of quantum field propagators}
 
-Le propagateur de Feynman $D_F(x-y)$ intègre sur tous les chemins temporels continus. Avec une granularité fondamentale $\tau_0$, la somme discrète donne :
+The Feynman propagator $D_F(x-y)$ integrates over all continuous temporal paths. With fundamental granularity $\tau_0$, the discrete sum gives:
 
-\begin{equation}\label{eq:propagateur_discret}
+\begin{equation}\label{eq:discrete_propagator}
 D_F^{\text{disc}}(x-y) = \sum_{n=0}^{\infty} \int \frac{d^3p}{(2\pi)^3} \frac{i}{2E_{\mathbf{p}}} \left( e^{-iE_{\mathbf{p}}(t_x-t_y-n\tau_0)} \theta(t_x-t_y-n\tau_0) + \text{h.c.} \right) e^{i\mathbf{p}\cdot(\mathbf{x}-\mathbf{y})}
 \end{equation}
 
-\begin{proposition}[Résonances stroboscopiques]
-Pour des processus de diffusion avec transfert d'énergie $\Delta E$ satisfaisant $\Delta E \cdot \tau_0 = 2\pi k$ ($k \in \mathbb{Z}$), des interférences constructives entre chemins temporels produisent des \textbf{pics de résonance} dans les sections efficaces à des énergies :
+\begin{proposition}[Stroboscopic resonances]
+For scattering processes with energy transfer $\Delta E$ satisfying $\Delta E \cdot \tau_0 = 2\pi k$ ($k \in \mathbb{Z}$), constructive interferences between temporal paths produce \textbf{resonance peaks} in cross-sections at energies:
 \begin{equation}
-E_k = \frac{2\pi k \hbar}{\tau_0} \approx k \times 4,1~\text{GeV} \quad (\text{pour } \tau_0 = 10^{-24}~\text{s})
+E_k = \frac{2\pi k \hbar}{\tau_0} \approx k \times 4.1~\text{GeV} \quad (\text{for } \tau_0 = 10^{-24}~\text{s})
 \end{equation}
 \end{proposition}
 
-Ces résonances seraient étroites ($\Gamma \sim \hbar/\tau_0 \sim 0,4$ eV) et dépourvues de canaux de désintégration (car ce ne sont pas des particules réelles mais des artefacts de la granularité temporelle).
+These resonances would be narrow ($\Gamma \sim \hbar/\tau_0 \sim 0.4$ eV) and devoid of decay channels (as they are not real particles but temporal granularity artifacts).
 
-\subsection{Violation effective de la symétrie de Lorentz}
+\subsection{Effective violation of Lorentz symmetry}
 
-Une échelle temporelle privilégiée $\tau_0$ brise l'invariance de Lorentz (comme le fait tout référentiel ou échelle privilégiée). La relation de dispersion se modifie en :
+A privileged temporal scale $\tau_0$ breaks Lorentz invariance (as does any privileged frame or scale). The dispersion relation modifies to:
 
-\begin{equation}\label{eq:dispersion_modifiee}
+\begin{equation}\label{eq:modified_dispersion}
 E^2 = p^2c^2 + m^2c^4 + \delta E(\tau_0, p), \quad \delta E \sim \frac{\hbar}{\tau_0} \sin^2\left(\frac{E\tau_0}{2\hbar}\right)
 \end{equation}
 
-impliquant :
+implying:
 \begin{itemize}
-    \item Des vitesses de groupe énergie-dépendantes $v_g = dE/dp$ déviants de $c$ pour les particules ultra-relativistes.
-    \item Des seuils de production de paires modifiés.
-    \item Des effets de birefringence en vide pour les photons de haute énergie.
+    \item Energy-dependent group velocities $v_g = dE/dp$ deviating from $c$ for ultra-relativistic particles.
+    \item Modified pair production thresholds.
+    \item Vacuum birefringence effects for high-energy photons.
 \end{itemize}
 
-\subsection{Mécanisme de décohérence intrinsèque}
+\subsection{Intrinsic decoherence mechanism}
 
-Pour une superposition macroscopique de $N$ particules, la désynchronisation des ``phases temporelles'' individuelles $\phi_i(t) = 2\pi t/\tau_0^{(i)}$ (où $\tau_0^{(i)}$ peut varier en raison du potentiel gravitationnel local ou de la vitesse) donne un taux de décohérence :
+For a macroscopic superposition of $N$ particles, desynchronization of individual ``temporal phases'' $\phi_i(t) = 2\pi t/\tau_0^{(i)}$ (where $\tau_0^{(i)}$ may vary due to local gravitational potential or velocity) yields a decoherence rate:
 
-\begin{equation}\label{eq:decoherence_intrinseque}
+\begin{equation}\label{eq:intrinsic_decoherence}
 \Gamma_{\text{gran}} \sim N \cdot \frac{(\delta\tau_0)^2}{\tau_0^3}
 \end{equation}
 
-Ceci prédit une \textbf{décohérence fondamentale} indépendante du couplage environnemental, croissant avec la taille du système.
+This predicts \textbf{fundamental decoherence} independent of environmental coupling, increasing with system size.
 
-\begin{conjecture}[Exigence de synchronisation]
-L'observation de superpositions macroscopiques (SQUIDs, interférométrie moléculaire) implique soit (a) $\tau_0 \ll 10^{-24}$ s, soit (b) un \textbf{mécanisme de synchronisation} imposant $\tau_0^{(i)} = \tau_0^{(j)}$ pour les systèmes liés. Ce dernier suggère une coordination temporelle médiée par la gravité, falsifiable via des expériences de superposition dans des potentiels gravitationnels variables.
+\begin{conjecture}[Synchronization requirement]
+Observation of macroscopic superpositions (SQUIDs, molecular interferometry) implies either (a) $\tau_0 \ll 10^{-24}$ s, or (b) a \textbf{synchronization mechanism} enforcing $\tau_0^{(i)} = \tau_0^{(j)}$ for bound systems. The latter suggests gravity-mediated temporal coordination, falsifiable via superposition experiments in variable gravitational potentials.
 \end{conjecture}
 
-\section{Protocoles Expérimentaux}
+\section{Experimental Protocols}
 
-La résolution temporelle directe à $\tau_0 \sim 10^{-24}$ s excède la technologie attoseconde actuelle ($\sim 10^{-18}$ s) de six ordres de grandeur. Nous proposons cinq protocoles alternatifs :
+Direct temporal resolution at $\tau_0 \sim 10^{-24}$ s exceeds current attosecond technology ($\sim 10^{-18}$ s) by six orders of magnitude. We propose five alternative protocols:
 
-\subsection{Protocole I : Spectroscopie de précision des transitions interdites}
+\subsection{Protocol I: Precision spectroscopy of forbidden transitions}
 
-\textbf{Mécanisme} : Si l'existence est intermittente, les transitions ``interdites'' (violant les règles de sélection) deviennent partiellement permises par ``tunnel temporel'' --- la particule contournant les contraintes d'évolution continue durant les intervalles de non-existence.
+\textbf{Mechanism}: If existence is intermittent, ``forbidden'' transitions (violating selection rules) become partially allowed by ``temporal tunneling''---the particle bypassing continuous evolution constraints during non-existence intervals.
 
-\textbf{Implémentation} :
+\textbf{Implementation}:
 \begin{itemize}[leftmargin=*]
-    \item Cible : Transitions interdites (par exemple, $\Delta l = 0$ pour transition électrique dipolaire) dans des ions piégés ($^{40}$Ca$^+$, $^{171}$Yb$^+$)
-    \item Observable : Largeur de raie résiduelle $\Gamma_{\text{interdite}}$ vs. prédictions QED à haute précision
-    \item Sensibilité : La spectroscopie à fontaine atomique atteint $\Delta\nu/\nu \sim 10^{-18}$ ; l'effet prédit à $\tau_0 \cdot \nu_{\text{transition}} \sim 10^{-9}$ pour les transitions optiques ($\nu \sim 10^{15}$ Hz)
+    \item Target: Forbidden transitions (e.g., $\Delta l = 0$ for electric dipole transition) in trapped ions ($^{40}$Ca$^+$, $^{171}$Yb$^+$)
+    \item Observable: Residual linewidth $\Gamma_{\text{forbidden}}$ vs. high-precision QED predictions
+    \item Sensitivity: Atomic fountain spectroscopy reaches $\Delta\nu/\nu \sim 10^{-18}$; predicted effect at $\tau_0 \cdot \nu_{\text{transition}} \sim 10^{-9}$ for optical transitions ($\nu \sim 10^{15}$ Hz)
 \end{itemize}
 
-\textbf{Signature} : Excès systématique de largeur de raie croissant avec la multipolarité de la transition, inexplicable par les effets QED standards.
+\textbf{Signature}: Systematic excess linewidth increasing with transition multipolarity, unexplainable by standard QED effects.
 
-\subsection{Protocole II : Désynchronisation relativiste dans l'intrication}
+\subsection{Protocol II: Relativistic desynchronization in entanglement}
 
-\textbf{Mécanisme} : Les particules intriquées en mouvement relatif subissent une dilatation temporelle différentielle de leurs ``fréquences de granularité'' $\nu = 1/\tau_0$ :
+\textbf{Mechanism}: Entangled particles in relative motion undergo differential time dilation of their ``granularity frequencies'' $\nu = 1/\tau_0$:
 
-\begin{equation}\label{eq:dilatation_granularite}
+\begin{equation}\label{eq:granularity_dilation}
 \Delta\nu = \nu_0 \left( \sqrt{1-\frac{v_1^2}{c^2}} - \sqrt{1-\frac{v_2^2}{c^2}} \right) \approx \frac{\nu_0}{2c^2}(v_2^2 - v_1^2)
 \end{equation}
 
-Pour des vitesses atomiques $v \sim 10^3$ m/s, $\Delta\nu/\nu_0 \sim 10^{-12}$.
+For atomic velocities $v \sim 10^3$ m/s, $\Delta\nu/\nu_0 \sim 10^{-12}$.
 
-\textbf{Implémentation} :
+\textbf{Implementation}:
 \begin{itemize}[leftmargin=*]
-    \item Créer des paires EPR (photons ou atomes)
-    \item Séparer en trajectoires avec différence de vitesse contrôlée $\Delta v \sim 10^2$--$10^3$ m/s
-    \item Mesurer la visibilité de la violation des inégalités de Bell vs. $\Delta v$
+    \item Create EPR pairs (photons or atoms)
+    \item Separate into trajectories with controlled velocity difference $\Delta v \sim 10^2$--$10^3$ m/s
+    \item Measure Bell inequality violation visibility vs. $\Delta v$
 \end{itemize}
 
-\textbf{Signature} : Dégradation quadratique de la visibilité avec $\Delta v$, absente en mécanique quantique standard.
+\textbf{Signature}: Quadratic visibility degradation with $\Delta v$, absent in standard quantum mechanics.
 
-\subsection{Protocole III : Archéologie des résonances en collisionneur}
+\subsection{Protocol III: Collider resonance archaeology}
 
-\textbf{Mécanisme} : Les résonances stroboscopiques (Proposition 1) apparaissent comme des pics périodiques à $E_n = n \cdot 2\pi\hbar/\tau_0$.
+\textbf{Mechanism}: Stroboscopic resonances (Proposition 1) appear as periodic peaks at $E_n = n \cdot 2\pi\hbar/\tau_0$.
 
-\textbf{Implémentation} :
+\textbf{Implementation}:
 \begin{itemize}[leftmargin=*]
-    \item Analyser les données existantes de LHC, Belle II, BaBar à la recherche de pics étroits à $E_n = n \times 4,1$ GeV ($n \in \mathbb{Z}^+$)
-    \item Critères : largeur $\Gamma \sim 0,4$ eV, absence de canaux de désintégration, non-assignabilité au Modèle Standard
+    \item Analyze existing LHC, Belle II, BaBar data for narrow peaks at $E_n = n \times 4.1$ GeV ($n \in \mathbb{Z}^+$)
+    \item Criteria: width $\Gamma \sim 0.4$ eV, absence of decay channels, non-assignability to Standard Model
 \end{itemize}
 
-\textbf{Signature} : Structure périodique dans le spectre de masse effective, incompatible avec les hadrons connus mais cohérente avec $\tau_0 = 10^{-24}$ s.
+\textbf{Signature}: Periodic structure in effective mass spectrum, incompatible with known hadrons but consistent with $\tau_0 = 10^{-24}$ s.
 
-\subsection{Protocole IV : Limites aux superpositions macroscopiques}
+\subsection{Protocol IV: Limits on macroscopic superpositions}
 
-\textbf{Mécanisme} : La décohérence par désynchronisation (Éq. \ref{eq:decoherence_intrinseque}) impose une limite fondamentale à la taille des superpositions quantiques.
+\textbf{Mechanism}: Desynchronization decoherence (Eq. \ref{eq:intrinsic_decoherence}) imposes a fundamental limit on the size of quantum superpositions.
 
-\textbf{Implémentation} :
+\textbf{Implementation}:
 \begin{itemize}[leftmargin=*]
-    \item Étendre l'interférométrie moléculaire (record actuel : $10^4$ uma) à des masses $10^6$--$10^9$ uma (clusters, nanoparticules)
-    \item Contrôler rigoureusement la décohérence environnementale (température cryogénique, vide ultra-poussé)
-    \item Monitorer le temps de cohérence $\tau_{\text{coh}}$ vs. nombre de constituants $N$
+    \item Extend molecular interferometry (current record: $10^4$ amu) to masses $10^6$--$10^9$ amu (clusters, nanoparticles)
+    \item Rigorously control environmental decoherence (cryogenic temperature, ultra-high vacuum)
+    \item Monitor coherence time $\tau_{\text{coh}}$ vs. number of constituents $N$
 \end{itemize}
 
-\textbf{Signature} : $\tau_{\text{coh}} \propto N^{-2}$ (prédiction granularité) vs. $N^{-1}$ (décohérence environnementale) vs. constant (QM standard). Une chute abrupte de cohérence au-delà d'un seuil $N_{\text{crit}}$ serait révélatrice.
+\textbf{Signature}: $\tau_{\text{coh}} \propto N^{-2}$ (granularity prediction) vs. $N^{-1}$ (environmental decoherence) vs. constant (standard QM). An abrupt coherence drop beyond a threshold $N_{\text{crit}}$ would be revealing.
 
-\subsection{Protocole V : Anomalies du rayonnement de Hawking}
+\subsection{Protocol V: Hawking radiation anomalies}
 
-\textbf{Mécanisme} : Le temps caractéristique du rayonnement de Hawking $\tau_H = 8\pi GM/(c^3)$ correspond à une température $T_H = \hbar c^3/(8\pi GMk_B)$. Si $\tau_0 > \tau_H$, la granularité temporelle supprime le rayonnement.
+\textbf{Mechanism}: The Hawking radiation characteristic time $\tau_H = 8\pi GM/(c^3)$ corresponds to temperature $T_H = \hbar c^3/(8\pi GMk_B)$. If $\tau_0 > \tau_H$, temporal granularity suppresses radiation.
 
-\textbf{Implémentation} :
+\textbf{Implementation}:
 \begin{itemize}[leftmargin=*]
-    \item Rechercher des trous noirs primordiaux de masse $M \sim c^3\tau_0/(8\pi G) \sim 10^8$ kg (rayon de Schwarzschild $\sim 10^{-19}$ m)
-    \item Détection par microlentille gravitationnelle (OGLE, Gaia, Fermi)
-    \item Vérifier l'absence de spectre gamma caractéristique du rayonnement Hawking
+    \item Search for primordial black holes of mass $M \sim c^3\tau_0/(8\pi G) \sim 10^8$ kg (Schwarzschild radius $\sim 10^{-19}$ m)
+    \item Detection by gravitational microlensing (OGLE, Gaia, Fermi)
+    \item Verify absence of characteristic Hawking gamma-ray spectrum
 \end{itemize}
 
-\textbf{Signature} : Objets compacts de $10^8$ kg, détectables par lensing mais électromagnétiquement silencieux, distinguables des trous noirs primordiaux radiants de masse différente.
+\textbf{Signature}: Compact objects of $10^8$ kg, detectable by lensing but electromagnetically silent, distinguishable from radiating primordial black holes of different mass.
 
-\section{Discussion : De la Faille à la Productivité Scientifique}
+\section{Discussion: From Flaw to Scientific Productivity}
 
-\subsection{L'épistémologie de l'échec constructif}
+\subsection{The epistemology of constructive failure}
 
-Les quatre failles identifiées en Partie II ne condamnent pas l'intuition originale à l'oubli. Elles la transforment en \textbf{programme de recherche} selon la méthodologie de Lakatos : le ``noyau dur'' (la symétrie espace-temps de la localisation) est protégé par une ``ceinture protectrice'' de hypothèses auxiliaires modifiables.
+The four flaws identified in Part II do not condemn the original intuition to oblivion. They transform it into a \textbf{research program} in the methodology of Lakatos: the ``hard core'' (space-time symmetry of localization) is protected by a ``protective belt'' of modifiable auxiliary hypotheses.
 
-Par exemple :
+For example:
 \begin{itemize}
-    \item La faille ontologique peut être résolue par une reformulation en termes de \textbf{degrés de liberté temporels} plutôt que d'existence binaire.
-    \item L'arbitraire de l'échelle peut être contraint par des \textbf{limites expérimentales} (Protocoles I--V).
-    \item La tension avec l'unitarité peut être levée par une \textbf{théorie de projection} pendant les gaps.
+    \item The ontological flaw can be resolved by reformulation in terms of \textbf{temporal degrees of freedom} rather than binary existence.
+    \item Scale arbitrariness can be constrained by \textbf{experimental limits} (Protocols I--V).
+    \item Tension with unitarity can be lifted by a \textbf{projection theory} during gaps.
 \end{itemize}
 
-\subsection{Le rôle de l'IA dans la critique constructive}
+\subsection{The role of AI in constructive criticism}
 
-L'analyse présentée illustre un usage avancé de l'intelligence artificielle en physique théorique : non pas comme générateur d'hypothèses (le ``noyau dur'' demeure humain), mais comme \textbf{critique formelle systématique}. L'IA a permis de :
+The present analysis illustrates an advanced use of artificial intelligence in theoretical physics: not as hypothesis generator (the ``hard core'' remains human), but as \textbf{systematic formal critic}. AI enabled:
 \begin{enumerate}
-    \item Identifier les inadéquations de type (discrétisation vs. discontinuité)
-    \item Formaliser les contradictions implicites (unitarité vs. non-existence)
-    \item Générer des prédictions testables à partir d'une proposition défaillante
+    \item Identification of type inadequacies (discretization vs. discontinuity)
+    \item Formalization of implicit contradictions (unitarity vs. non-existence)
+    \item Generation of testable predictions from a defective proposition
 \end{enumerate}
 
-Cette fonction de ``compilateur logique critique'' représente une modalité nouvelle de l'IA dans la science, complémentaire des rôles computationnel et synthétique.
+This ``critical logical compiler'' function represents a novel AI modality in science, complementary to computational and synthetic roles.
 
 % ============================================================
 % CONCLUSION
 % ============================================================
 \section*{Conclusion}
 
-Nous avons conduit une étude en trois mouvements d'une intuition physique vieille de trois décennies. \textbf{Premièrement}, nous avons énoncé la proposition de discontinuité temporelle dans sa forme formalisée, mettant en lumière son intuition centrale : la symétrie entre localisation spatiale et temporelle de la matière. \textbf{Deuxièmement}, nous avons soumis cette proposition à une critique systématique, révélant quatre failles conceptuelles majeures qui l'empêchent de constituer une théorie physique cohérente en l'état. \textbf{Troisièmement}, adoptant une posture contrafactuelle, nous avons dérivé les conséquences théoriques et expérimentales que cette hypothèse engendrerait si elle était valide, aboutissant à cinq protocoles de test empirique.
+We have conducted a three-movement study of a three-decade-old physical intuition. \textbf{First}, we stated the temporal discontinuity proposition in its formalized form, highlighting its central intuition: the symmetry between spatial and temporal localization of matter. \textbf{Second}, we subjected this proposition to systematic critique, revealing four major conceptual flaws preventing it from constituting a coherent physical theory as it stands. \textbf{Third}, adopting a counterfactual posture, we derived the theoretical and experimental consequences this hypothesis would generate if valid, culminating in five empirical test protocols.
 
-Cette démarche illustre une voie possible pour la physique fondamentale contemporaine : l'utilisation de l'intelligence artificielle comme médiateur entre l'imagination conceptuelle humaine et la rigueur formelle, permettant même aux intuitions défaillantes de générer des programmes de recherche productifs. Que la nature respecte ou non cette intuition particulière --- que le temps soit granulaire comme l'espace --- demeure une question ouverte. Mais la capacité à transformer une ``quantiquo-épilepsie'' en cinq protocoles expérimentaux vérifiables démontre le pouvoir de la formalisation critique, humaine et artificielle combinée.
-
-% ============================================================
-% REMERCIEMENTS
-% ============================================================
-\section*{Remerciements}
-
-L'intuition originale a été conçue par H.B. vers 1990. L'analyse formelle, la critique systématique et l'élaboration des protocoles expérimentaux ont été conduites en 2024 avec l'assistance de Claude (Anthropic), fonctionnant comme traducteur formel et critique logique, non comme co-auteur de l'insight physique.
+This approach illustrates a possible path for contemporary fundamental physics: the use of artificial intelligence as mediator between human conceptual imagination and formal rigour, enabling even defective intuitions to generate productive research programs. Whether nature respects this particular intuition---whether time is granular like space---remains an open question. But the capacity to transform a ``quantiquo-épilepsie'' into five verifiable experimental protocols demonstrates the power of critical formalization, human and artificial combined.
 
 % ============================================================
-% RÉFÉRENCES
+% ACKNOWLEDGMENTS
+% ============================================================
+\section*{Acknowledgments}
+
+The original intuition was conceived by H.B. circa 1990. The formal analysis, systematic critique, and elaboration of experimental protocols were conducted in 2024 with assistance from Claude (Anthropic), functioning as formal translator and logical critic, not as co-author of physical insight.
+
+% ============================================================
+% REFERENCES
 % ============================================================
 \begin{thebibliography}{20}
 
